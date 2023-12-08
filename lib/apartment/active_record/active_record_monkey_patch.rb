@@ -10,6 +10,7 @@ module ActiveRecord
     module PostgreSQL
       class SchemaDumper < ActiveRecord::ConnectionAdapters::SchemaDumper
         def schemas(stream)
+          stream.puts "# Skipping schema_create by ros-apartment because each tenant has a dynamic schema."
         end
       end
     end
