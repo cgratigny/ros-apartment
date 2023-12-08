@@ -4,7 +4,6 @@
 # Beause our schema is customer specific, we do not want to add the schema to schema.rb
 
 require 'active_record/connection_adapters/postgresql_adapter'
-require 'active_record/connection_adapters/schema_dumper'
 
 module ActiveRecord
   module ConnectionAdapters
