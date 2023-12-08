@@ -6,7 +6,7 @@
 module Apartment
   module ActiveRecordMonkeyPatch
     module PostgreSQL
-      class SchemaDumper < ActiveRecord::ConnectionAdapters::SchemaDumper
+      class SchemaDumper
         def schemas(stream)
           # Your custom implementation
         end
