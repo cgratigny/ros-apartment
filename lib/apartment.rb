@@ -5,7 +5,7 @@ require 'active_support/core_ext/object/blank'
 require 'forwardable'
 require 'active_record'
 require 'apartment/tenant'
-require 'aprtment/active_record_monkey_patch'
+require 'apartment/active_record_monkey_patch'
 
 require_relative 'apartment/log_subscriber'
 
