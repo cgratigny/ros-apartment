@@ -22,6 +22,8 @@ end
 module Apartment
 
   ActiveSupport.on_load(:active_record) do
+    require 'active_record/connection_adapters/postgresql_adapter'
+    
     ActiveRecord::ConnectionAdapters::PostgreSQL::SchemaDumper.prepend(
       Apartment::ActiveRecordMonkeyPatch::PostgreSQL::SchemaDumper
     )
