@@ -5,6 +5,7 @@ require 'active_support/core_ext/object/blank'
 require 'forwardable'
 require 'active_record'
 require 'apartment/tenant'
+require 'aprtment/active_record_monkey_patch'
 
 require_relative 'apartment/log_subscriber'
 
@@ -19,6 +20,12 @@ end
 
 # Apartment main definitions
 module Apartment
+
+  ActiveSupport.on_load(:active_record) do
+    ActiveRecord::ConnectionAdapters::PostgreSQL::SchemaDumper.prepend(
+      Apartment::ActiveRecordMonkeyPatch::PostgreSQL::SchemaDumper
+    )
+  end
   class << self
     extend Forwardable
 
